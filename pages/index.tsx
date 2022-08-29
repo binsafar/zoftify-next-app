@@ -1,21 +1,16 @@
 import type {NextPage} from 'next'
-import {useAppDispatch, useAppSelector} from "../store/hooks";
-import {useEffect} from "react";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
 
-    const posts = useAppSelector((state) => state)
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        console.log(posts)
-    }, [])
-
     return (
         <div>
-            <h1>hello world</h1>
+            <Header/>
+            <div className={"wrapper"}>
+
+            </div>
         </div>
     )
 }
 
-export default Home
+export default Home;

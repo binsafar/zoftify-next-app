@@ -1,5 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
-import {RootState} from "../store";
+import {createSlice, Draft} from '@reduxjs/toolkit';
 
 interface postState {
     posts: any
@@ -7,18 +6,18 @@ interface postState {
 
 const initialState: postState = {
     posts: null
-}
+} as const;
 
 export const postSlice = createSlice({
-    name: "post",
+    name: 'post',
     initialState,
     reducers: {
-        getAll: (state) => {
+        getAll: (state: Draft<typeof initialState>) => {
             state.posts = [{id: 1, name: 'name'}]
+            console.log(state.posts)
         }
     }
-})
+});
 
 export const {getAll} = postSlice.actions;
-export const {} = (state: RootState) => state;
 export default postSlice.reducer;
