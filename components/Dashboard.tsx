@@ -1,14 +1,16 @@
-import styled from "styled-components";
+import icon from "../assets/tasks.png";
+import Link from "next/link";
+
+import "../styles/dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
     return (
-        <Container>
-            <h1>dashboard</h1>
-        </Container>
+        <Link href={"/"} className={"link"}>
+            <div className={"wrapper"}>
+                <img src={icon.src} alt="tasks"/>
+                <p>Posts</p>
+            </div>
+        </Link>
     )
 }
 export default Dashboard;
-
-const Container = styled.div`
-  
-`;

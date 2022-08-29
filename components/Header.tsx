@@ -1,26 +1,37 @@
-// @ts-ignore
-import styled from "styled-components";
+import Link from "next/link";
+import {useRouter} from "next/router";
+
 import logo from "../assets/logo.png";
+import arrow_left from "../assets/arrow_left.png";
+import "../styles/header/Header.module.css";
 
 const Header = () => {
-    const isPostPage = false;
+    const router = useRouter()
+    const isPostPage = router.pathname;
 
     return (
-        <Container>
-            <img src={logo.src} alt=""/>
-            {isPostPage ?
+        <div className={"header-container"}>
+            <Link href={"/"}>
+                <img className={""}
+                     width={78}
+                     height={18}
+                     src={logo.src} alt=""/>
+            </Link>
+            {isPostPage === "/" ?
                 <div>
-
+                    <p>Posts</p>
                 </div>
                 :
-                <div>
-
-                </div>}
-        </Container>
+                <div className={"new-post"}>
+                    <button className={"button"}>
+                        <Link href={"/"}>
+                            <img src={arrow_left.src} alt="arrow_left"/>
+                        </Link>
+                    </button>
+                    <p>New Post</p>
+                </div>
+            }
+        </div>
     )
 }
 export default Header;
-
-const Container = styled.div`
-
-`;

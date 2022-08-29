@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c928a545-f22a-43a5-9883-d64d4335e0c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/arrow_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/calendar_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/search_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/new-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/dashboard/Dashboard.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/header/Header.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/feature/postSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/feature/postSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/hooks.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +26,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="Sass File" />
       </list>
     </option>
   </component>
@@ -58,12 +53,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Yokub/Desktop/code/zoftify-next-app/assets",
+    "list.type.of.created.stylesheet": "Sass",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "watcher.settings",
     "ts.external.directory.path": "C:\\Users\\Yokub\\Desktop\\code\\zoftify-next-app\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -74,6 +70,7 @@
       <recent name="C:\Users\Yokub\Desktop\code\zoftify-next-app\assets\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yokub\Desktop\code\zoftify-next-app\styles" />
       <recent name="C:\Users\Yokub\Desktop\code\zoftify-next-app\components" />
     </key>
   </component>
@@ -86,7 +83,9 @@
       <option name="presentableId" value="Default" />
       <updated>1661772037921</updated>
       <workItem from="1661772041376" duration="3630000" />
-      <workItem from="1661777510002" duration="2053000" />
+      <workItem from="1661777510002" duration="3467000" />
+      <workItem from="1661785686897" duration="2003000" />
+      <workItem from="1661787727662" duration="2410000" />
     </task>
     <servers />
   </component>
