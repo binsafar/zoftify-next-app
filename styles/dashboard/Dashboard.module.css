@@ -1,3 +1,29 @@
-
+.container {
+  height: 100vh;
+  width: 208px;
+  background: #fff;
+  margin-top: 1px;
+  display: inline-block;
+}
+.container .margin {
+  margin-bottom: 32px;
+}
+.container .card {
+  width: 184px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin: auto;
+  cursor: pointer;
+  background: #F5F6FA;
+}
+.container .card .img {
+  width: 24px;
+  height: 24px;
+}
+.container .card .title {
+  margin-left: 8px;
+}
 
 /*# sourceMappingURL=Dashboard.module.css.map */

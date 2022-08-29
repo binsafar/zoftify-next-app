@@ -1,16 +1,22 @@
-import icon from "../assets/tasks.png";
 import Link from "next/link";
 
-import "../styles/dashboard/Dashboard.module.css";
+import icon from "../assets/tasks.png";
+import styles from "../styles/dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
     return (
-        <Link href={"/"} className={"link"}>
-            <div className={"wrapper"}>
-                <img src={icon.src} alt="tasks"/>
-                <p>Posts</p>
-            </div>
-        </Link>
+        <div className={styles.container}>
+            <Link href={"/"}>
+                <div>
+                    <div className={styles.margin}></div>
+                    <div className={styles.card}>
+                        <img className={styles.img}
+                             src={icon.src} alt="tasks"/>
+                        <p className={styles.title}>Posts</p>
+                    </div>
+                </div>
+            </Link>
+        </div>
     )
 }
 export default Dashboard;

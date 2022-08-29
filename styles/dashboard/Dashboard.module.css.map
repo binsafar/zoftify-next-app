@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"Dashboard.module.css"}
+{"version":3,"sourceRoot":"","sources":["Dashboard.module.sass"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;;AAEA;EACE;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAEF;EACE","file":"Dashboard.module.css"}

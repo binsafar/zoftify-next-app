@@ -3,32 +3,32 @@ import {useRouter} from "next/router";
 
 import logo from "../assets/logo.png";
 import arrow_left from "../assets/arrow_left.png";
-import "../styles/header/Header.module.css";
+import styles from "../styles/header/Header.module.css";
 
 const Header = () => {
     const router = useRouter()
     const isPostPage = router.pathname;
 
     return (
-        <div className={"header-container"}>
+        <div className={styles.header_container}>
             <Link href={"/"}>
-                <img className={""}
-                     width={78}
-                     height={18}
+                <img className={styles.header_img}
                      src={logo.src} alt=""/>
             </Link>
+
             {isPostPage === "/" ?
                 <div>
-                    <p>Posts</p>
+                    <p className={styles.header_title}>Posts</p>
                 </div>
                 :
-                <div className={"new-post"}>
-                    <button className={"button"}>
-                        <Link href={"/"}>
-                            <img src={arrow_left.src} alt="arrow_left"/>
-                        </Link>
-                    </button>
-                    <p>New Post</p>
+                <div className={styles.header_wrapper}>
+                    <Link href={"/"}>
+                        <div className={styles.header_link}>
+                            <img className={styles.header_img_link}
+                                 src={arrow_left.src} alt="arrow_left"/>
+                        </div>
+                    </Link>
+                    <p className={styles.header_title}>New Post</p>
                 </div>
             }
         </div>
