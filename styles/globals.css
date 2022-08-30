@@ -7,4 +7,9 @@
 
 body {
     background: #F5F5F5;
+    overflow-x: hidden;
+}
+
+.wrapper-page {
+    display: flex;
 }
