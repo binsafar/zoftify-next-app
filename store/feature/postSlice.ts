@@ -52,7 +52,7 @@ const initialState: postState = {
         },
         {
             id: 8,
-            title: 'name',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
             time: '2022-08-30T15:32',
             status: 'published'
         },
