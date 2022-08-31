@@ -3,35 +3,39 @@ import {ChangeEvent, useState} from "react";
 
 import Header from "../components/Header";
 import Dashboard from "../components/Dashboard";
+import {addPost} from "../store/feature/postSlice";
+import {useDispatch} from "react-redux";
 import styles from "../styles/content/Content.module.css";
+import {set} from "immutable";
 
 const NewCard: NextPage = () => {
-
+    const dispatch = useDispatch()
     const [newPost, setNewPost] = useState<any>({
-        id: 1,
         title: '',
         status: 'status',
         date: ''
     });
+    const [text, setText] = useState('Submit')
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value)
         setNewPost({...newPost, title: event.target.value});
     };
     const handleInputChange2 = (event: ChangeEvent<HTMLSelectElement>) => {
-        console.log(event.target.value)
         setNewPost({...newPost, status: event.target.value});
     };
     const handleInputChange3 = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value)
         setNewPost({...newPost, date: event.target.value});
     };
-    const handleButton = () => {
-        console.log(newPost)
+    const sendData = () => {
+        dispatch(addPost({newPost}))
+        setText('submitting...')
+        setInterval(() => {
+            setText('Submit')
+        }, 300)
     }
-
     return (
         <div>
             <Header/>
+            {/*<div className={styles.wrapper_page}>*/}
             <div className={"wrapper-page"}>
                 <Dashboard/>
                 <div className={styles.content_container}>
@@ -62,9 +66,9 @@ const NewCard: NextPage = () => {
                             />
                         </div>
 
-                        <button onClick={handleButton}
+                        <button onClick={sendData}
                                 className={styles.new_submit}
-                                type={"submit"}>Submit
+                                type={"submit"}>{text}
                         </button>
                     </div>
                 </div>

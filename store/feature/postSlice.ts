@@ -1,4 +1,4 @@
-import {createSlice, Draft} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 interface postState {
     posts: any,
@@ -6,7 +6,7 @@ interface postState {
 }
 
 const initialState: postState = {
-    id: 2,
+    id: 10,
     posts: [
         {
             id: 1,
@@ -68,6 +68,12 @@ const initialState: postState = {
             time: '2022-08-30T15:32',
             status: 'published'
         },
+        // {
+        //     id: 11,
+        //     title: 'name',
+        //     time: '2022-08-30T15:32',
+        //     status: 'published'
+        // }
     ]
 } as const;
 
@@ -75,17 +81,18 @@ export const postSlice = createSlice({
     name: 'post',
     initialState,
     reducers: {
-        addOne: (state) => {
-            state.id++;
-            state.posts.push({
-                id: state.id,
-                title: 'name',
-                time: '',
-                status: ''
-            })
+        addPost: (state: any, action: PayloadAction) => {
+            state.id++
+            state.posts.push({id: state.id, ...action.payload.newPost})
+        },
+        editPost: (state: any, action: PayloadAction) => {
+            const {id, status} = action.payload;
+            const existing = state.posts.find((post: any) => post.id == id)
+            if (existing) {
+                existing.status = status
+            }
         }
     }
 });
-
-export const {addOne} = postSlice.actions;
+export const {addPost, editPost} = postSlice.actions;
 export default postSlice.reducer;

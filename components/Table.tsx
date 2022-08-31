@@ -1,20 +1,53 @@
-import styles from "../styles/table/table.module.css";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {ChangeEvent, useState} from "react";
+
+import {editPost} from "../store/feature/postSlice";
+import styles from "../styles/table/table.module.css";
+import left from "../assets/pagination/left.png"
+import right from "../assets/pagination/right.png"
 
 const Table = (props: any) => {
 
-    const posts = useSelector((state: any) => state.postSlice.posts)
+    const rootData = useSelector((state: any) => state.postSlice.posts)
+    const dispatch = useDispatch();
     const [select, setSelect] = useState<any>('5')
 
-    const handleStatus = (event: ChangeEvent<HTMLSelectElement>) => {
-        console.log(event.target.value)
-    };
     const handleSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-        console.log(event.target.value)
         setSelect(event.target.value)
     };
-
+    let posts: any[] = [];
+    //filtering by status
+    switch (props.show) {
+        case 1:
+            for (let i = 0; i < rootData.length; i++) {
+                if (rootData[i].title.toLowerCase().startsWith(props.search)) {
+                    posts.push(rootData[i])
+                }
+            }
+            break;
+        case 2:
+            for (let i = 0; i < rootData.length; i++) {
+                if (rootData[i].status === "draft") {
+                    posts.push(rootData[i])
+                }
+            }
+            break;
+        case 3:
+            for (let i = 0; i < rootData.length; i++) {
+                if (rootData[i].status === "published") {
+                    posts.push(rootData[i])
+                }
+            }
+            break;
+        default:
+            console.log('error')
+    }
+    let pagination: number[] = [];
+    let pages = Math.ceil(posts.length / 5);
+    for (let i = 1; i < pages + 1; i++) {
+        pagination.push(i)
+    }
+    console.log(pagination)
     return (
         <div className={styles.container}>
             <table className={styles.table}>
@@ -37,7 +70,9 @@ const Table = (props: any) => {
                         <td className={styles.td}>{item.time}</td>
                         <td>
                             <select className={styles.select}
-                                    onChange={handleStatus}
+                                    onChange={(event: any) => {
+                                        dispatch(editPost({id: item.id, status: event.target.value}))
+                                    }}
                                     defaultValue={item.status}
                                     id="status">
                                 <option value={'draft'}>Draft</option>
@@ -55,12 +90,14 @@ const Table = (props: any) => {
                             defaultValue={select}
                             id="status">
                         <option value={'5'}>5</option>
-                        <option value={'10'}>10</option>
                     </select>
-                    <p>Showing 1 - 5 of 20</p>
+                    {posts && <p>Showing 1 - {select} of {posts.length}</p>}
                 </div>
                 <div className={styles.right}>
-
+                    <button className={styles.arrow_btn}><img src={left.src} alt=""/></button>
+                    {pagination.map((item: any, index: number) => {
+                        return <button key={index}>{item}</button>})}
+                    <button className={styles.arrow_btn}><img src={right.src} alt=""/></button>
                 </div>
             </div>
         </div>
