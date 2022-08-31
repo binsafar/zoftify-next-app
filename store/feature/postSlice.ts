@@ -6,7 +6,7 @@ interface postState {
 }
 
 const initialState: postState = {
-    id: 10,
+    id: 11,
     posts: [
         {
             id: 1,
