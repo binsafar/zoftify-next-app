@@ -68,12 +68,12 @@ const initialState: postState = {
             time: '2022-08-30T15:32',
             status: 'published'
         },
-        // {
-        //     id: 11,
-        //     title: 'name',
-        //     time: '2022-08-30T15:32',
-        //     status: 'published'
-        // }
+        {
+            id: 11,
+            title: 'name',
+            time: '2022-08-30T15:32',
+            status: 'published'
+        }
     ]
 } as const;
 
